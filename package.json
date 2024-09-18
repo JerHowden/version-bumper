@@ -1,7 +1,7 @@
 {
   "name": "version-bumper",
   "displayName": "Version Bumper",
-  "description": "Automatically bump package.json version on git commit.",
+  "description": "Automatically bump package.json version to semver specifications.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.92.0"
@@ -12,10 +12,39 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "views": {
+      "scm": [
+        {
+          "type": "webview",
+          "id": "versionBumper",
+          "name": "Version Bumper"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "version-bumper.helloWorld",
-        "title": "Hello World"
+        "command": "version-bumper.bump-major",
+        "title": "Version Bumper: Bump Major"
+      },
+      {
+        "command": "version-bumper.bump-minor",
+        "title": "Version Bumper: Bump Minor"
+      },
+      {
+        "command": "version-bumper.bump-patch",
+        "title": "Version Bumper: Bump Patch"
+      },
+      {
+        "command": "version-bumper.bump-pre-release",
+        "title": "Version Bumper: Bump Pre-Release"
+      },
+      {
+        "command": "version-bumper.bump-build",
+        "title": "Version Bumper: Bump Build"
+      },
+      {
+        "command": "version-bumper.reset",
+        "title": "Version Bumper: Reset"
       }
     ]
   },
